@@ -1,0 +1,152 @@
+/*Add some Google Fonts to the File.*/
+
+@import url('https://fonts.googleapis.com/css2?family=Monomaniac+One&family=Titillium+Web&display=swap');
+
+/*
+    
+    How to call the fonts in the CSS.
+
+    font-family: 'Monomaniac One', sans-serif;
+    font-family: 'Titillium Web', sans-serif;
+
+*/
+
+/*Shared code between all pages.*/
+
+html {
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+p, a, td {
+    font-family: 'Titillium Web', sans-serif;
+}
+
+h1, h2, h3, h4, th, footer{
+    font-family: 'Monomaniac One', sans-serif;
+}
+
+main {
+    margin: 2em 0 2em 0;
+}
+
+/*Shared code between Forms. */
+label.control-label {
+    margin: 0.8em 0 0.2em;
+}
+
+input.btn.btn-primary {
+    margin: 1.5em 0 1.5em 0;
+}
+
+/*Code for Home Page*/
+
+/*Code for Scripture Page*/
+form.search-form {
+    margin: 2em 0 2em 0;
+}
+
+table.table {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+table thead {
+    background-color: #3e44a9;
+    color: white;
+}
+
+td a.edit-dets-del {
+    display:flex;
+    flex-direction: column;
+    font-size: 1.3em;
+}
+
+th.notes-open, td.notes-open {
+    display: none;
+}
+
+a.no-decoration.create-rules{
+    margin-left: 0;
+}
+
+a.no-decoration {
+    text-decoration: none;
+    text-decoration: none;
+    padding: 0.2em 0 0.2em 0;
+    border-radius: 0.5em;
+    margin: 0.2em 0 0.2em 0;
+    background-color: #395f97;
+    color: #ffffff;
+}
+
+a.no-decoration:hover {
+    text-decoration: underline;
+    background-color: #63a1fd;
+}
+
+a.no-decoration.out-of-index {
+    margin: 0.2em 1em 0.2em 0;
+}
+
+a.no-decoration.small-view {
+    margin: 0.2em 0 0.2em 1em;
+    padding: 0.4em 0.3em 0.4em 0.3em;
+}
+
+/*Code for Create Event Page*/
+/*Code for Edit Event Page*/
+/*Code for Display Event Page*/
+/*Code for Delete Event Page*/
+div#deleteDiv {
+    border: 0.2em solid black;
+    padding: 0.5em;
+}
+/*Code for Large View.*/
+@media (min-width: 768px) {
+    /*Shared code between Forms. */
+    /*Code for Home Page*/
+    /*Code for Scripture Page*/
+    table.table {
+        display: block;
+    }
+
+    th.notes-open, td.notes-open {
+        display: revert;
+    }
+
+    td a.edit-dets-del {
+        font-size: 1em;
+    }
+
+    a.no-decoration {
+        padding: 0.2em 0.5em 0.2em 0.5em;
+        margin: 0.2em 1em 0.2em 1em;
+    }
+    /*Code for Create Event Page*/
+    /*Code for Edit Event Page*/
+    /*Code for Display Event Page*/
+    /*Code for Delete Event Page*/
+}
+/*Medium view.*/
+@media (min-width: 429px) {
+
+    td a.edit-dets-del {
+        display: revert;
+    }
+
+    a.no-decoration {
+        margin: 0.2em 0.5em 0.2em 0;
+        padding: 0.2em 0.2em 0.2em 0.2em;
+    }
+}

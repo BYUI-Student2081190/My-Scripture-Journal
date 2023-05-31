@@ -1,0 +1,78 @@
+﻿@page
+@model My_Scripture_Journal.Pages.Scriptures.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Scripture Events</h1>
+
+<p>
+    <a asp-page="Create" class="no-decoration create-rules">Create New Scripture Event</a>
+</p>
+
+<form class="search-form">
+    <p>
+        Made: <select asp-for="ObjectDate" asp-items="Model.Dates">
+                    <option value="">All</option>
+              </select>
+    </p>
+    <p>
+        Book: <select asp-for="BookName" asp-items="Model.Books">
+                  <option value="">All</option>
+              </select>
+    </p>
+    <p>
+        Search Notes: <input type="text" asp-for="searchString" />
+    </p>
+    <input type="submit" value="Filter" />
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Scripture[0].Book)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Scripture[0].Chapter)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Scripture[0].Verse)
+            </th>
+            <th class="notes-open">
+                @Html.DisplayNameFor(model => model.Scripture[0].Notes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Scripture[0].PublishDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Scripture) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Book)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Chapter)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Verse)
+            </td>
+            <td class="notes-open">
+                @Html.DisplayFor(modelItem => item.Notes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PublishDate)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id" class="edit-dets-del no-decoration">Edit</a> 
+                    <a asp-page="./Details" asp-route-id="@item.Id" class="edit-dets-del no-decoration">Details</a>
+                    <a asp-page="./Delete" asp-route-id="@item.Id" class="edit-dets-del no-decoration">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
